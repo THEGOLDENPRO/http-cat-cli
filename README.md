@@ -21,6 +21,10 @@ anyways now I can get these hypertext transfer protocol kitties right from a ter
 > [!WARNING]
 > Currently only added Linux support as I'm too lazy rn 😪 😴
 
+### Required Prerequisites
+- [golang](https://go.dev/)
+- [chafa](https://github.com/hpjansson/chafa) (used for image displaying)
+
 1. Clone and cd into the repo.
 ```sh
 git clone https://github.com/THEGOLDENPRO/http-cat-cli
