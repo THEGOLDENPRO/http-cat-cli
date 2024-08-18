@@ -18,7 +18,8 @@ const apiHost string = "https://http.cat"
 func main() {
 	app := &cli.App{
 		Name:  "http-cat",
-		Usage: "Returns a HTTP 🐱 kitty!",
+		Usage: "Returns a HTTP 🐱 kitty! (E.g. http-cat 100)",
+		ArgsUsage: "[http status]",
 		Action: func(cCtx *cli.Context) error {
 			var http_status_code string = cCtx.Args().Get(0)
 
