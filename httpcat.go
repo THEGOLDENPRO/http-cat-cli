@@ -25,7 +25,7 @@ func main() {
 			if !isStringNumber(http_status_code) {
 				fmt.Println(
 					"You must provide a HTTP status code! " +
-						"E.g. http-cat 404, http-cat 500. Run 'http-cat --help' for more help.",
+						"(E.g. http-cat 404, http-cat 500) \nRun 'http-cat --help' for more information.",
 				)
 				return nil
 			}
@@ -36,6 +36,16 @@ func main() {
 
 			if err != nil {
 				log.Fatalln("GET request to HTTP Cat API failed:", err)
+			}
+
+			if response.StatusCode >= 400 {
+				if response.StatusCode == 404 {
+					log.Fatalln(
+						"A 🐈 kitty corresponding to that HTTP status isn't available! Error:", response.Status,
+					)
+				}
+
+				log.Fatalln("API Error:", response.Status)
 			}
 
 			var temp_directory_path string = getTempDir()
@@ -57,7 +67,9 @@ func main() {
 				log.Fatalln("Failed to write the 🐈 kitty in the temp directory:", err)
 			}
 
-			output, err := exec.Command("chafa", path_to_image, "--scale", "0.7").Output()
+			output, err := exec.Command(
+				"chafa", path_to_image, "--scale", "0.7",
+			).Output()
 
 			if err != nil {
 				log.Fatalln(
