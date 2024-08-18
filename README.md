@@ -9,17 +9,45 @@
 </div>
 
 ## The Problem
-I was working on the backend of a web project of mine and I forgot what the HTTP status code `418` was so instead of opening a web browser I of course used this as an excuse to write my very first golang project.
+I was working on the backend of a web project of mine and I forgot what the HTTP status code `418` was, so instead of opening a web browser I of course used this as an excuse to write my very first golang project.
 
 turns out I was getting trolled...
 
 <img width="500px" src="./assets/http_cat_418.png">
 
+anyways now I can get these hypertext transfer protocol kitties right from a terminal ⛱️ ☺️
+
+## How to install from soruce.
+> [!WARNING]
+> Currently only added Linux support as I'm too lazy rn 😪 😴
+
+### Required Prerequisites
+- [golang](https://go.dev/)
+- [chafa](https://github.com/hpjansson/chafa) (used for image displaying)
+
+1. Clone and cd into the repo.
+```sh
+git clone https://github.com/THEGOLDENPRO/http-cat-cli
+cd http-cat-cli
+```
+2. Build the Go project.
+```sh
+make
+```
+3. Install the binary.
+```sh
+make install
+```
+4. Done ✨
+```sh
+http-cat 100
+```
+<img width="500px" src="./assets/http_cat_100.png">
+
 ## Powered by the HTTP Cats API 🌟
 The command line interface is brought to you by **https://http.cat/**.
 
 Of course I am not affiliated with them...
-
 
 > Section 1: Meow Disclaimer Meow
 > 
